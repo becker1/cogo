@@ -1,23 +1,22 @@
 <% provide(:title, "Sign in") %>
 <h1>Sign in</h1>
 
-<div class="row">
+<div style="margin-left:30px;">
   <div class="span6 offset3">
     <%= form_tag sessions_path do %>
-      <%= flash[:error] %>
 
       <table cellpadding="0" cellspacing="0" style="font-family:arial;font-size:12px;text-align:right;">
         <tr>
-          <td><%= label_tag :email %>&nbsp;</td>
+          <td style="padding-right:5px;"><%= label_tag :email %></td>
           <td><%= text_field_tag :email, params[:email] %></td>
         </tr>
         <tr>
-          <td><%= label_tag :password %>&nbsp;</td>
+          <td style="padding-right:5px;"><%= label_tag :password %></td>
           <td><%= password_field_tag :password %></td>
         </tr>
       </table>
 
-      <%= submit_tag "Sign in" %>
+      <%= submit_tag "Sign in", class: "btn btn-large btn-primary" %>
     <% end %>
 
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
